@@ -1,6 +1,12 @@
 /*Convert the given number into a roman numeral.
 All roman numerals answers should be provided in upper-case.
 
+convertToRoman(2) should return "II".
+convertToRoman(3) should return "III".
+convertToRoman(4) should return "IV".
+convertToRoman(5) should return "V".
+convertToRoman(9) should return "IX".
+convertToRoman(12) should return "XII".
 */
 
 function convertToRoman(num) {
@@ -18,3 +24,5 @@ function convertToRoman(num) {
    return roman;
 }
 convertToRoman(100);
+// CommonJS modules
+module.exports = convertToRoman;

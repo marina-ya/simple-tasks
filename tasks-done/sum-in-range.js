@@ -21,3 +21,6 @@ function sumAll(arr) {
 }
 
 sumAll([4, 1]);
+
+
+module.exports = sumAll;
