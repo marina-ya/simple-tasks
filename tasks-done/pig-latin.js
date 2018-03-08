@@ -15,18 +15,30 @@ translatePigLatin("eight") should return "eightway".
 
 
 function translatePigLatin(str) {
-    var str = str.split("");
+    var strArr = str.split("");
+    var firstVowel = /[aeiou]/.test(str[0]);
+    var secondVowel = /[aeiou]/.test(str[1]);
+    
+    if (firstVowel == false) {
+        var firstLetter = strArr.shift();
 
-    var firstConsonant = /[aeiou]/.test(str[0]);
-    if(firstConsonant==false){
-        var newWord=str.push("ay").join('');
+        if (secondVowel == true) {
+            str = strArr.push(firstLetter + "ay");
+        } else {
+            var secondLetter = strArr.shift();
+            str = strArr.push(firstLetter + secondLetter + "ay");
+        }
+        strArr = strArr.join('');
+        return strArr;
+        
+    } else {
+        str = str + "way";
+        return str;
     }
+}
 
-    console.log(str);
-   
-    console.log(newWord);
-    return str;
-  }
-  
-  translatePigLatin("consonant");
+translatePigLatin("clali");
+
+
+module.exports = translatePigLatin;
   
