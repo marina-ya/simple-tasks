@@ -23,6 +23,15 @@ function dateConverter(timeSeconds, dateFormat) {
     if (isNaN(timeSeconds)) {
         return " ";
     }
+    if (dateFormat === undefined) {
+        dateFormat = {
+            days: "d",
+            hours: "h",
+            minutes: "m",
+            seconds: "s"
+        };
+    }
+
     var sec_num = parseInt(timeSeconds, 10); // don't forget the second param
     var days = Math.floor(sec_num / 86400);
     var hours = Math.floor((sec_num - (days * 86400)) / 3600);
@@ -38,15 +47,7 @@ function dateConverter(timeSeconds, dateFormat) {
     if (seconds < 10) {
         seconds = "0" + seconds;
     }
-
-    if (dateFormat === undefined) {
-        dateFormat = {
-            days: "d",
-            hours: "h",
-            minutes: "m",
-            seconds: "s"
-        };
-    }
+    
     var resultTime = days + dateFormat.days + ' ' + hours + dateFormat.hours + ' ' + minutes + dateFormat.minutes + ' ' + seconds + dateFormat.seconds;
     if (days == 0) {
         var resultTime = hours + dateFormat.hours + ' ' + minutes + dateFormat.minutes + ' ' + seconds + dateFormat.seconds;
