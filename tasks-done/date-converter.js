@@ -20,7 +20,7 @@ please remember about tests
 
 
 function dateConverter(timeSeconds, dateFormat) {
-    if (isNaN(timeSeconds)) {
+    if (isNaN(timeSeconds) || timeSeconds==null ) {
         return " ";
     }
     if (dateFormat === undefined) {
@@ -60,7 +60,7 @@ function dateConverter(timeSeconds, dateFormat) {
     return resultTime;
 }
 
-dateConverter("86415", {
+dateConverter("5565", {
     days: "d",
     hours: "h",
     minutes: "m",
