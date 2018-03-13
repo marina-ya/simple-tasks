@@ -24,13 +24,7 @@ function dateConverter(timeSeconds, dateFormat = defaultFormat) {
     hours  = prependZero(hours);
     minutes = prependZero(minutes);
     seconds = prependZero(seconds);
-   
-    
-    // [].map().filter().reduce() 
-    // .map
-    // .filter
-    // .reduce
-     
+
     let resultTime = `${days}${dateFormat.days} ${hours}${dateFormat.hours} ${minutes}${dateFormat.minutes} ${seconds}${dateFormat.seconds}`;
     if (days === 0) {
          resultTime =`${hours}${dateFormat.hours} ${minutes}${dateFormat.minutes} ${seconds}${dateFormat.seconds}`;
@@ -38,10 +32,7 @@ function dateConverter(timeSeconds, dateFormat = defaultFormat) {
             resultTime = `${minutes}${dateFormat.minutes} ${seconds}${dateFormat.seconds}`;
         }
     }
-    
     return resultTime;
 }
-
-dateConverter("44554");
 
 module.exports = dateConverter;
