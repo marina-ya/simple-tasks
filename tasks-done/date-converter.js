@@ -34,17 +34,14 @@ function dateConverter(timeSeconds, dateFormat = defaultFormat) {
     let resultTime = `${days}${dateFormat.days} ${hours}${dateFormat.hours} ${minutes}${dateFormat.minutes} ${seconds}${dateFormat.seconds}`;
     if (days === 0) {
          resultTime =`${hours}${dateFormat.hours} ${minutes}${dateFormat.minutes} ${seconds}${dateFormat.seconds}`;
-         console.log(hours);
          if (hours === "00") {
             resultTime = `${minutes}${dateFormat.minutes} ${seconds}${dateFormat.seconds}`;
         }
     }
     
-
-    console.log(resultTime);
     return resultTime;
 }
 
-dateConverter("abc");
+dateConverter("44554");
 
 module.exports = dateConverter;
