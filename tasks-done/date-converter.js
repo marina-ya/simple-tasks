@@ -24,8 +24,7 @@ function dateConverter(timeSeconds, dateFormat = defaultFormat) {
     hours  = prependZero(hours);
     minutes = prependZero(minutes);
     seconds = prependZero(seconds);
-
-    let resultTime = `${days}${dateFormat.days} ${hours}${dateFormat.hours} ${minutes}${dateFormat.minutes} ${seconds}${dateFormat.seconds}`;
+     let resultTime = `${days}${dateFormat.days} ${hours}${dateFormat.hours} ${minutes}${dateFormat.minutes} ${seconds}${dateFormat.seconds}`;
     if (days === 0) {
          resultTime =`${hours}${dateFormat.hours} ${minutes}${dateFormat.minutes} ${seconds}${dateFormat.seconds}`;
          if (hours === "00") {
