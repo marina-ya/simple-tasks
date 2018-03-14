@@ -6,24 +6,31 @@ For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less
 
 
 function sumFibs(num) {
-        var arrayFib = [1, 1];
-        while (arrayFib[arrayFib.length-1] + arrayFib[arrayFib.length-2] <= num) {
-            arrayFib.push(arrayFib[arrayFib.length-1] + arrayFib[arrayFib.length-2]);
-        }        
 
-        var oddNumArray = arrayFib.filter(function (num) {
-            return num % 2 !== 0;
-        });
-        var sum = oddNumArray.reduce(function (accumulator, currentValue) {
-            return accumulator + currentValue;
-          }, 0);
+    let arrayFib = [1, 1];
+    let fibonacci = {
+        [Symbol.iterator]() {
+            let pre = 0,
+                cur = 1;
+            return {
+                next() {
+                    [pre, cur] = [cur, pre + cur];
+                    return {
+                        done: false,
+                        value: cur
+                    }
+                }
+            }
+        }
+    }
 
-        console.log(arrayFib);
-        console.log(oddNumArray);
-        console.log(sum);
-        return sum;
-  }
-  
-  sumFibs(1000);
-  module.exports = sumFibs;   
-  
+    for (var n of fibonacci) {
+        if (n > num)
+            break;
+        arrayFib.push(n);
+    }
+    return arrayFib.filter((num) => num % 2 !== 0).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+}
+
+sumFibs(10);
+module.exports = sumFibs;
