@@ -15,4 +15,6 @@ function spinalCase(str) {
   }
   
   spinalCase('ThisIs Spinal Tap');
+
+  module.exports = spinalCase;
   

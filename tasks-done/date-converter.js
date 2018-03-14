@@ -24,14 +24,26 @@ function dateConverter(timeSeconds, dateFormat = defaultFormat) {
     hours  = prependZero(hours);
     minutes = prependZero(minutes);
     seconds = prependZero(seconds);
-     let resultTime = `${days}${dateFormat.days} ${hours}${dateFormat.hours} ${minutes}${dateFormat.minutes} ${seconds}${dateFormat.seconds}`;
+   
+    
+    // [].map().filter().reduce() 
+    // .map
+    // .filter
+    // .reduce
+     
+    let resultTime = `${days}${dateFormat.days} ${hours}${dateFormat.hours} ${minutes}${dateFormat.minutes} ${seconds}${dateFormat.seconds}`;
     if (days === 0) {
          resultTime =`${hours}${dateFormat.hours} ${minutes}${dateFormat.minutes} ${seconds}${dateFormat.seconds}`;
          if (hours === "00") {
             resultTime = `${minutes}${dateFormat.minutes} ${seconds}${dateFormat.seconds}`;
         }
     }
+    
+
+    console.log(resultTime);
     return resultTime;
 }
+
+dateConverter('60');
 
 module.exports = dateConverter;
