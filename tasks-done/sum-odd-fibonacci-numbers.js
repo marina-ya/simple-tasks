@@ -6,7 +6,6 @@ For example, sumFibs(10) should return 10 because all odd Fibonacci numbers less
 
 
 function sumFibs(num) {
-
     let arrayFib = [1, 1];
     let fibonacci = {
         [Symbol.iterator]() {
