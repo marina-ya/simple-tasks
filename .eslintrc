@@ -1,0 +1,17 @@
+{
+    "extends": [
+        "eslint:recommended"
+    ],
+    "plugins": ["prettier"],
+    "env": {
+        "node": true
+    },
+    "parser": "babel-eslint",
+    "rules": {
+        "no-console": "off",
+        "no-unused-vars": "warn"
+    },
+    "globals": {
+        "console": false
+    }
+}
