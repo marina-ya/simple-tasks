@@ -1,17 +1,16 @@
 {
-    "extends": [
-        "eslint:recommended"
-    ],
-    "plugins": ["prettier"],
-    "env": {
-        "node": true
-    },
-    "parser": "babel-eslint",
-    "rules": {
-        "no-console": "off",
-        "no-unused-vars": "warn"
-    },
-    "globals": {
-        "console": false
-    }
+  "extends": ["eslint:recommended", "plugin:jest/recommended"],
+  "plugins": ["prettier", "jest"],
+  "env": {
+    "node": true,
+    "jest/globals": true
+  },
+  "parser": "babel-eslint",
+  "rules": {
+    "no-console": "off",
+    "no-unused-vars": "warn"
+  },
+  "globals": {
+    "console": false
+  }
 }
